@@ -1,0 +1,12 @@
+ImportFlagsFrom("../../")
+
+Application("ptzctl",
+     Sources(GLOB('*.cpp')),
+     LIBS(module = "baidu/adu-3rd/ihs-algobase",
+          libs = ["libGeographic.a","libmongoose.a", "libzmq.a", "libihspb.a", 
+          "libprotobuf.a", "libafl.a", "libgflags.a","libpaho-mqtt3as.a", "libpaho-mqttpp3.a",
+          "libglog.a", "libmisc.a", "libcrypto.a", "libssl.a"]),
+     LIBS(libs=["libsn.a"]),
+     LDFLAGS('-lpthread', '-ldl'),
+     LinkDeps(False)
+)
